@@ -17,6 +17,7 @@ const textWithImageModuleZ = z.object({
   layout: z.enum(["left", "right"]),
   title: z.string(),
   subtitle: z.string(),
+  slogans: z.array(z.string()),
   image: sanityImageObjectExtendedZ.nullable(),
   excerpt: z.string(),
 })

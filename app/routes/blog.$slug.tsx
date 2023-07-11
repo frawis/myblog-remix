@@ -3,6 +3,7 @@ import { json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 import { Post } from "~/components/posts/post"
 import { PostPreview } from "~/components/posts/post-preview"
+import { Wrapper } from "~/components/shared/ui/wrapper"
 import { postQuery } from "~/lib/queries"
 import { getClient } from "~/lib/sanity"
 import { getSession } from "~/sessions"
@@ -23,8 +24,10 @@ export const loader: LoaderFunction = async ({
 export default function BlogEntry() {
   const { post, preview } = useLoaderData<typeof loader>()
   return (
-    <main className="px-4 py-6">
-      {preview?.token ? <PostPreview post={post} /> : <Post post={post} />}
+    <main className="flex-1">
+      <Wrapper>
+        {preview?.token ? <PostPreview post={post} /> : <Post post={post} />}
+      </Wrapper>
     </main>
   )
 }

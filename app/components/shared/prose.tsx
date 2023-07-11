@@ -13,7 +13,7 @@ const Prose = ({
   return (
     <Component
       className={cn(
-        "prose mx-auto max-w-5xl dark:prose-invert",
+        "prose prose-invert prose-lime mx-auto max-w-5xl",
         "prose-headings:mb-2 prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight",
         className
       )}

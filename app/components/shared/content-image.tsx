@@ -25,7 +25,7 @@ const ContentImage = (
         .url()}
       style={{ aspectRatio: width / height }}
       className={cn(
-        "not-prose h-auto w-full",
+        "not-prose h-auto w-full object-cover object-center",
         isInline ? "inline-block" : "block"
       )}
       alt={value.alt || ""}

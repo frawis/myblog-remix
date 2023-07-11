@@ -13,7 +13,7 @@ const Posts = ({ posts }: { posts: SanityDocument[] }) => {
               <Card>
                 <CardContent>
                   <div>
-                    <div className="mb-3 overflow-hidden rounded-md border-2 border-black">
+                    <div className="mb-3 overflow-hidden rounded-md border-2">
                       <ContentImage value={post.mainImage} isInline />
                     </div>
                     <h2 className="mb-2 font-display text-2xl font-bold leading-tight">
@@ -29,7 +29,7 @@ const Posts = ({ posts }: { posts: SanityDocument[] }) => {
                   <div className="mt-2">
                     <div className="flex justify-between">
                       {post.publishedAt && (
-                        <div className="text-sm text-neutral-800">
+                        <div className="text-sm text-neutral-300">
                           {new Date(post.publishedAt).toLocaleDateString("de", {
                             year: "numeric",
                             month: "long",

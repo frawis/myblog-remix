@@ -21,6 +21,7 @@ _key,
 _type,
 title,
 subtitle,
+slogans,
 image { ${image} },
 `
 
@@ -72,4 +73,15 @@ export const homeQuery = `*[_type == "home" && _id == "home"][0]{
       },
     }
   }
+}`
+
+export const pageQuery = `*[_type == "page" && slug.current == $slug][0]{
+  "createdAt": coalesce(createdAt, _createdAt),
+  "publishedAt": coalesce(publishedAt, _updatedAt),
+  "slug": slug.current,
+  _type,
+  title,
+  body[]{
+    ...,
+  },
 }`

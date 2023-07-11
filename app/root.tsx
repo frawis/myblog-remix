@@ -26,6 +26,12 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: fonts },
   { rel: "stylesheet", href: styles },
+  {
+    rel: "icon",
+    type: "image/png",
+    href: "/favicon-32x32.png",
+    sizes: "32x32",
+  },
 ]
 
 const PreviewProvider = lazy(
@@ -51,14 +57,14 @@ export default function App() {
   )
 
   return (
-    <html lang="de" className="antialiased font-sans">
+    <html lang="de" className="font-sans antialiased">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="font-sans flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col border-white bg-neutral-950 font-sans text-white">
         {preview?.token ? (
           <PreviewProvider token={preview.token}>
             <Suspense fallback={children}>{children}</Suspense>
